@@ -25,8 +25,8 @@ VM::instruction VM::op_decoder (unsigned char x) {
     inst.im2 = x & im2_mask;
     inst.alu_vs_cond = x & alu_cond_mask;
     inst.op = x & operation_mask;
-    inst.arg1_ram = (x & arg1_ram_mask) == arg1_ram_mask;
-    inst.arg2_ram = (x & arg2_ram_mask) == arg2_ram_mask;
+    inst.arg1_ram = (x & dest_ram_mask) == arg1_ram_mask;
+    inst.arg2_ram = (x & dest_ram_mask) == arg2_ram_mask;
     inst.dest_ram = (x & dest_ram_mask) == dest_ram_mask;
     return inst;
 }
